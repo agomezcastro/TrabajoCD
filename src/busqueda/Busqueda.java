@@ -1,24 +1,19 @@
 package busqueda;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Busqueda {
 
     public static void main(String[] args) {
-        Scanner consola = new Scanner(System.in);   
-        int varArray;
-        System.out.println("Introduce el valor del array:");
-        varArray= consola.nextInt();
-        int varValor;
-        System.out.println("Introduce el numero a adivinar:");
-        varValor= consola.nextInt();
+        int varArray = Integer.parseInt(JOptionPane.showInputDialog("Introduce el valor del array:"));
+        int varValor = Integer.parseInt(JOptionPane.showInputDialog("Introduce el valor a adivinar:"));
         int[] numeros = new int[varArray];
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = i * 5;
         }
         Busqueda ejemplo = new Busqueda();
         int indice = ejemplo.busquedaBinaria(numeros, varValor, 0, numeros.length - 1);
-        System.out.println("El indice del valor "+ varValor +" es: " + indice);
+        JOptionPane.showMessageDialog(null, "El indice del valor " + varValor + " es: " + indice);
     }
 
     public int busquedaBinaria(int[] listado, int clave, int posInicial, int posFinal) {
