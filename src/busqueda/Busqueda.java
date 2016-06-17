@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Busqueda {
 
     public static void main(String[] args) {
-        Scanner consola = new Scanner(System.in);
+        Scanner consola = new Scanner(System.in);   
         int varArray;
         System.out.println("Introduce el valor del array:");
         varArray= consola.nextInt();
